@@ -782,12 +782,6 @@ minetest.register_node("xocean:horn", {
 		minetest.set_node(pos, {name = "default:coral_brown"})
 	end,
 })
-minetest.override_item("default:coral_skeleton", {
- 	description = "Horn Coral Skeleton Block",
-	tiles = {"xocean_coral_horn_skeleton.png"},
-	groups = {cracky = 3},
-	sounds = default.node_sound_stone_defaults(),
-})
 minetest.register_node("xocean:skeleton_horn", {
 	description = "Horn Coral Skeleton",
 	drawtype = "plantlike_rooted",

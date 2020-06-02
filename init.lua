@@ -1732,6 +1732,7 @@ mobs:register_mob("xocean:fish", {
 		run_velocity = 3,
 		fly = true,
 		fly_in = "default:water_source",
+		fall_speed = 0,
 		view_range = 30,
 		water_damage = 0,
 		lava_damage = 10,

@@ -1732,11 +1732,11 @@ mobs:register_mob("xocean:fish", {
 		run_velocity = 3,
 		fly = true,
 		fly_in = "default:water_source",
-		fall_speed = 0,
 		view_range = 30,
 		water_damage = 0,
 		lava_damage = 10,
 		light_damage = 0,
+		air_damage = 2,
 		animation = {
 			speed_normal = 15,
 	    speed_run = 25,
@@ -1747,6 +1747,12 @@ mobs:register_mob("xocean:fish", {
 	    run_start = 40,
 	    run_end = 100,
 		},
+		do_custom = function(self, dtime)
+			if self.standing_in == "air" then
+				self.health = self.health - dtime
+				self:check_for_death({type = "environment", pos = pos, node = self.standing_in})
+			end
+		end,
 	})
 	mobs:spawn_specific("xocean:fish",	{"default:water_source"},	{"default:water_flowing","default:water_source"},	2, 20, 30, 10000, 5, -31000, l_water_level)
 	mobs:register_egg("xocean:fish", "Tropical Fish (Kob)", "xocean_fish.png", 0)
@@ -1787,6 +1793,12 @@ mobs:register_mob("xocean:fish2", {
 	    run_start = 40,
 	    run_end = 100,
 		},
+		do_custom = function(self, dtime)
+			if self.standing_in == "air" then
+				self.health = self.health - dtime
+				self:check_for_death({type = "environment", pos = pos, node = self.standing_in})
+			end
+		end,
 	})
 	mobs:spawn_specific("xocean:fish2",	{"default:water_source"},	{"default:water_flowing","default:water_source"},	2, 20, 30, 10000, 5, -31000, l_water_level)
 	mobs:register_egg("xocean:fish2", "Tropical Fish (SunStreak)", "xocean_fish2.png", 0)
@@ -1827,6 +1839,12 @@ mobs:register_mob("xocean:fish3", {
 	    run_start = 40,
 	    run_end = 100,
 		},
+		do_custom = function(self, dtime)
+			if self.standing_in == "air" then
+				self.health = self.health - dtime
+				self:check_for_death({type = "environment", pos = pos, node = self.standing_in})
+			end
+		end,
 	})
 	mobs:spawn_specific("xocean:fish3",	{"default:water_source"},	{"default:water_flowing","default:water_source"},	2, 20, 30, 10000, 5, -31000, l_water_level)
 	mobs:register_egg("xocean:fish3", "Tropical Fish (Dasher)", "xocean_fish3.png", 0)
@@ -1867,6 +1885,12 @@ mobs:register_mob("xocean:fish4", {
 	    run_start = 40,
 	    run_end = 100,
 		},
+		do_custom = function(self, dtime)
+			if self.standing_in == "air" then
+				self.health = self.health - dtime
+				self:check_for_death({type = "environment", pos = pos, node = self.standing_in})
+			end
+		end,
 	})
 	mobs:spawn_specific("xocean:fish4",	{"default:water_source"},	{"default:water_flowing","default:water_source"},	2, 20, 30, 10000, 5, -31000, l_water_level)
 	mobs:register_egg("xocean:fish4", "Tropical Fish (Snapper)", "xocean_fish4.png", 0)

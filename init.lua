@@ -798,8 +798,8 @@ minetest.register_node("xocean:skeleton_horn", {
 				{-4/16, 0.5, -4/16, 4/16, 1.5, 4/16},
 		},
 	},
-	drop = "xocean:skeleton:horn",
-	node_dig_prediction = "xocean:horn_skeleton",
+	drop = "xocean:skeleton_horn",
+	node_dig_prediction = "xocean:skeleton_horn",
 	node_placement_prediction = "",
 	sounds = default.node_sound_stone_defaults({
 		dig = {name = "default_dig_snappy", gain = 0.2},
@@ -815,7 +815,7 @@ minetest.register_node("xocean:skeleton_horn", {
 		local pos_under = pointed_thing.under
 		local pos_above = pointed_thing.above
 
-		if minetest.get_node(pos_under).name ~= "xocean:horn_skeleton" or
+		if minetest.get_node(pos_under).name ~= "xocean:skeleton_horn" or
 				minetest.get_node(pos_above).name ~= "default:water_source" then
 			return itemstack
 		end
@@ -836,7 +836,7 @@ minetest.register_node("xocean:skeleton_horn", {
 	end,
 
 	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:horn_skeleton"})
+		minetest.set_node(pos, {name = "xocean:skeleton_horn"})
 	end,
 })
 minetest.override_item("default:coral_orange", {
@@ -1871,4 +1871,3 @@ mobs:register_mob("xocean:fish4", {
 	mobs:spawn_specific("xocean:fish4",	{"default:water_source"},	{"default:water_flowing","default:water_source"},	2, 20, 30, 10000, 5, -31000, l_water_level)
 	mobs:register_egg("xocean:fish4", "Tropical Fish (Snapper)", "xocean_fish4.png", 0)
 end
-minetest.register_alias("xocean:horn_skeleton", "xocean:skeleton_horn")
